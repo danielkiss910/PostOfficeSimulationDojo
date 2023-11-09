@@ -10,7 +10,15 @@ public static class Program
         var postOffice = new PostOffice();
         var postOfficeUi = new PostOfficeUi();
 
-        postOfficeUi.CreateAndPostItems(postOffice);
-        postOfficeUi.DisplayResults(postOffice);
+        try
+        {
+            postOfficeUi.CreateAndPostItems(postOffice);
+            postOfficeUi.DisplayResults(postOffice);
+        }
+        catch (ArgumentException exception)
+        {
+            Console.WriteLine($"Error creating a box: {exception.Message}");
+            throw;
+        }
     }
 }
