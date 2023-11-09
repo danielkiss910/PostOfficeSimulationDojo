@@ -1,6 +1,8 @@
 namespace PostOfficeSimulationDojo.Model;
 
-public class Box
+public abstract class Box : PostedItem
 {
-    
+    public int WeightInGrams { get; set; }
 }
+
+// Similar to PostedItem class, but add weight
